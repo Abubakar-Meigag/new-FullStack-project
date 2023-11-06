@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 pool.connect();
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on Port: ${port}`);
 });
 
 app.get("/", (req, res) => {
