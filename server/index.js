@@ -22,7 +22,9 @@ app.get("/", (req, res) => {
 
 
 const getDataTest = require('./app/getDataTest');
+const getUserByEmail = require("./app/getUserByEmail");
 
 
 
 app.get('/test', getDataTest);
+app.get("/byEmail", getUserByEmail);

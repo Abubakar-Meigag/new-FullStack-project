@@ -1,7 +1,7 @@
 const pool = require('../db');
 
 const getDataTest = async (req, res) => { 
-    const query = "select * from todo_list";
+    const query = "select * from todo_listData";
     try {
         const data = await pool.query(query);
         res.status(200).json(data.rows);
