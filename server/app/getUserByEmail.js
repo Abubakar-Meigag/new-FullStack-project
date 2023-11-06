@@ -1,20 +1,20 @@
 const pool = require("../db");
 
 const getUserByEmail = async (req, res) => {
-    const query = "select * from todo_listData WHERE user_email= $1";
-    // const user_email = "beko.m@beko.com";
+    const query = "SELECT * FROM todo_listData WHERE user_email = $1";
+    const { userEmail } = req.params;
+    
     try {
-        const data = await pool.query(query, [user_email]);
+        const data = await pool.query(query, [userEmail]);
         res.status(200).json(data.rows);
-    } catch (error) {
-        console.error(error);
+    } catch (err) {
+        console.error(err.message);
         res.status(404).json({
             result: "failed",
             message: "No user found by this email address",
         });
-
-        pool.end();
     }
 };
+
 
 module.exports = getUserByEmail;
