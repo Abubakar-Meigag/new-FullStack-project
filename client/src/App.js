@@ -2,7 +2,7 @@ import ListHeader from "./components/ListHeader";
 
 function App() {
   return (
-    <div className="text-4xl font-bold underline text-center cupcake">
+    <div className="mt-20 p-5 app-card app-width">
       <ListHeader listName={"Holiday tick list"} />
     </div>
   );
