@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const cors = require("cors");
 const port = process.env.PORT || 8008;
-const pool = require("./db");
+const pool = require('./db');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -19,3 +19,10 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.send("Welcome to my now server on port" + port);
 });
+
+
+const getDataTest = require('./app/getDataTest');
+
+
+
+app.get('/test', getDataTest);
