@@ -4,16 +4,19 @@ import TickIcon from "./TickIcon";
 
 const ListItem = ({ todoItem }) => {
   return (
-    <div className="flex justify-between items">
-      <div className='info-container'>
+    <li className="flex justify-between items">
+      <div className="info-container">
         <TickIcon />
-        <p className='todo-title'>{todoItem.title}</p>
+        <p className="todo-title">
+          {todoItem.title}
+        </p>
         <ProgressBar />
       </div>
-      <div className=''>
-
+      <div className="flex flex-col my-3 mx-3 sm:flex-row md:flex-row p-2 gap-2 text-center sm:text-center md:text-center">
+        <button className="btn btn-accent text-base sm:text-xl">Edit Todo</button>
+        <button className="btn btn-error text-base sm:text-xl">Delete</button>
       </div>
-    </div>
+    </li>
   );
 }
 
